@@ -1,0 +1,285 @@
+/* BASIC SETUP / RESET STYLES */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
+  background-color: white;
+}
+
+/* UTILITY CLASSES */
+
+.flex-center-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.js-loading {
+  animation-play-state: paused !important;
+}
+
+/* ANIMATIONS */
+
+.swing-bottom-fwd {
+  animation: swing-bottom-fwd 500ms ease-in both;
+}
+
+@keyframes swing-bottom-fwd {
+  0% {
+    opacity: 0;
+    transform: rotateX(-180deg);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0);  
+    transform-origin: top;
+  }
+}
+
+.wobble-hor-bottom {
+  animation: wobble-hor-bottom 0.8s both;
+}
+
+@keyframes wobble-hor-bottom {
+  0% {
+    opacity: 0;
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+}
+
+/* PAGE CONTENT */
+
+.page-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+
+header {
+  height: 100vh;
+
+  font-weight: bold;
+  background: url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/HeadlineImage_1.jpg') center center/cover;
+}
+
+.header-text__primary,
+.header-text__secondary {
+  opacity: 0;
+}
+
+.header-text__primary {
+  width: 100%;
+  text-align: center;
+  color: #C0202C;
+  font-size: 8rem;
+  background: linear-gradient(to right, rgba(255,255,255,.2), rgba(255,255,255,.75) 20%, rgba(255,255,255,.75) 80%, rgba(255,255,255,.2));
+}
+
+.header-text__secondary {
+  font-size: 5rem;
+  color: white;
+}
+
+/* SECTION 1 */
+
+.sec-1 {
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.sec-1--img-header {
+  width: 100%;
+  justify-content: space-evenly;
+  background: linear-gradient(to right, rgba(196, 154, 108, .3),  rgba(195, 155, 124, .7), rgba(196, 154, 108, .3));
+}
+
+.sec-1--img-header > div {
+  margin: 3rem 0;
+  height: 100%;
+  justify-content: space-evenly;
+  opacity: 0;
+}
+
+.sec-1--img-header > div > img {
+  object-fit: contain;
+}
+
+.sec-1--img-header > div > h4 {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+
+.sec-1--text {
+  margin: 2rem 0;
+}
+
+.sec-1--text > * {
+  margin-bottom: 1.5rem;
+}
+
+.sec-1--text ul {
+  list-style: none;
+}
+
+.sec-1--text li {
+  margin-bottom: 1.5rem;
+}
+
+.sec-1--text ul li::before {
+  content: '✓';
+  margin-right: 1rem;
+}
+
+/* SECTION 2 */
+
+.sec-2 {
+  height: 45vh;
+  align-items: flex-start;
+  color: white;
+  background: url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/ParallaxOne_5.jpg') no-repeat top center/cover;
+  background-attachment: fixed;
+}
+
+.sec-2--text {
+  margin-left: 5rem;
+  font-weight: bold;
+}
+
+.sec-2--text__main {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+
+.sec-2--text__sub {
+  font-size: 2rem;
+}
+
+/*  SECTION 3 */
+
+.sec-3 {
+  margin: 3rem 0;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.brown-bar {
+  position: relative;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.brown-bar::before {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 60%;
+  width: 100%;
+  content: '';
+  z-index: 1;
+
+  background: #3d1c0f;
+}
+
+.brown-bar--img {
+  height: 30vw;
+  object-fit: contain;
+  z-index: 100;
+}
+
+.brown-bar--text {
+  width: 50%;
+  z-index: 100;
+  color: white;
+}
+
+/* SECTION 4 */
+
+.sec-4 {
+  padding: 2rem 0 4rem 0;
+  height: 100%;
+}
+
+.sec-4--text {
+  width: 80%;
+}
+
+.sec-4--text > p {
+  margin-bottom: 2rem;
+}
+
+
+/* SECTION 5 */
+
+.sec-5 {
+  padding: 3rem 0;
+  height: 100%;
+  background-color: #A41F25;
+  background-image: url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/Gears_15.jpg');
+  background-position: 85rem -95rem;
+  background-repeat: no-repeat;
+}
+
+.sec-5--text {
+  width: 80%;
+}
+
+.sec-5--text > * {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.sec-5--text > h3 {
+  color: #FFCD2F;
+  font-size: 3rem;
+}
